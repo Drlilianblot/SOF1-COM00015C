@@ -1,4 +1,4 @@
-# Tuples
+# More on Tuples
 
 \chapterimage{chapter\_head\_1.pdf} \chapter{Tuples} \label{cha:tuples}
 

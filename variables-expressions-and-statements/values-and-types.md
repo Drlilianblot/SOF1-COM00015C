@@ -225,6 +225,62 @@ Similarly to the string data type, a list can be sliced:
 >>>
 ```
 
+#### List slices
+
+The slice operator also works on lists:
+
+```bash
+>>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 
+>>> t[1:3]
+ ['b', 'c']
+>>> t[:4]
+ ['a', 'b', 'c', 'd']
+>>> t[3:]
+ ['d', 'e', 'f'] 
+>>>
+```
+
+If you omit the first index, the slice starts at the beginning. If you omit the second, the slice goes to the end. So if you omit both, the slice is a copy of the whole list.
+
+```bash
+>>> t[:]
+ ['a', 'b', 'c', 'd', 'e', 'f'] 
+>>>
+```
+
+Since lists are mutable, it is often useful to make a copy before performing operations that fold, spindle or mutilate lists.
+
+A slice operator on the left side of an assignment can update multiple elements:
+
+```bash
+>>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 
+>>> t[1:3] = ['x', 'y'] 
+>>> print(t) 
+ ['a', 'x', 'y', 'd', 'e', 'f'] 
+>>>
+```
+
+You can add elements to a list by squeezing them into an empty slice:
+
+```
+>>> t = ['a', 'd', 'e', 'f'] 
+>>> t[1:1] = ['b', 'c'] 
+>>> print(t) 
+ ['a', 'b', 'c', 'd', 'e', 'f'] 
+>>>
+```
+
+And you can remove elements from a list by assigning the empty list to them:
+
+```
+>>> t = ['a', 'b', 'c', 'd', 'e', 'f'] 
+>>> t[1:3] = [] 
+>>> print t 
+ ['a', 'd', 'e', 'f'] 
+```
+
+But both of those operations can be expressed more clearly with list methods shown in the section ["more on List"](../a-deeper-dive-into-strings-lists-and-tuples/more-on-lists.md#list-methods).
+
 ### Tuples
 
 A tuple is a sequence of values. The values can be any type, and they are indexed by integers., so in that respect tuples are a lot like lists. The important difference is that tuples are **immutable** (like Strings).  Syntactically, a tuple is a comma-separated list of values:
