@@ -1,1 +1,2 @@
-# SOF1-COM00015C
+# About the author
+
